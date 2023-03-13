@@ -16,6 +16,11 @@ public class scpFlogEnemy : MonoBehaviour
 
     private bool colliding;
 
+    public LayerMask layer;
+
+    public BoxCollider2D boxCollider2D;
+    public CircleCollider2D circleCollider2D;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +33,32 @@ public class scpFlogEnemy : MonoBehaviour
     {
         rig.velocity = new Vector2(speed, rig.velocity.y);
 
-        colliding = Physics2D.Linecast(rightCol.position, leftCol.position);
+        colliding = Physics2D.Linecast(rightCol.position, leftCol.position, layer);
 
         if(colliding)
         {
+            // invertendo a rotaçao
+            transform.localScale = new Vector2(transform.localScale.x * -1f, transform.localScale.y);
+            speed *= -1f;
+        }
+    }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Player")
+        {
+            float height = col.contacts[0].point.y - headPoint.position.y;
+
+            if(height > 0)
+            {
+                col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+                speed = 0;
+                anim.SetTrigger("die");
+                boxCollider2D.enabled = false;
+                circleCollider2D.enabled = false;
+                rig.bodyType = RigidbodyType2D.Kinematic;
+                Destroy(gameObject, 0.43f);
+            }
         }
     }
 }
