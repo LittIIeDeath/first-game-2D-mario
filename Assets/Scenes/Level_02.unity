@@ -493,6 +493,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2556354273972661235, guid: bfe3223ba253f37489b213a405fd8830, type: 3}
+      propertyPath: m_Target.x
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556354273972661235, guid: bfe3223ba253f37489b213a405fd8830, type: 3}
+      propertyPath: m_Target.y
+      value: 0.029999971
+      objectReference: {fileID: 0}
     - target: {fileID: 2556354273972661236, guid: bfe3223ba253f37489b213a405fd8830, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12273,10 +12281,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 200857628649319633, guid: 036b4ab01f8f4cc47a35b11f5bbe6a4f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.059
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 036b4ab01f8f4cc47a35b11f5bbe6a4f, type: 3}
 --- !u!1001 &277187576887375168
@@ -12343,22 +12347,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 417399444915421736, guid: 60a29d45597313c49a3599ec0cd7f436, type: 3}
-      propertyPath: m_Size.x
-      value: 0.21275744
-      objectReference: {fileID: 0}
-    - target: {fileID: 417399444915421736, guid: 60a29d45597313c49a3599ec0cd7f436, type: 3}
-      propertyPath: m_Size.y
-      value: 0.12381999
-      objectReference: {fileID: 0}
-    - target: {fileID: 417399444915421736, guid: 60a29d45597313c49a3599ec0cd7f436, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0054484904
-      objectReference: {fileID: 0}
-    - target: {fileID: 417399444915421736, guid: 60a29d45597313c49a3599ec0cd7f436, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.024641953
-      objectReference: {fileID: 0}
     - target: {fileID: 417399444915421740, guid: 60a29d45597313c49a3599ec0cd7f436, type: 3}
       propertyPath: m_Name
       value: Player
@@ -12369,11 +12357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 417399444915421742, guid: 60a29d45597313c49a3599ec0cd7f436, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.38
+      value: -2.303
       objectReference: {fileID: 0}
     - target: {fileID: 417399444915421742, guid: 60a29d45597313c49a3599ec0cd7f436, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.05
+      value: -0.161
       objectReference: {fileID: 0}
     - target: {fileID: 417399444915421742, guid: 60a29d45597313c49a3599ec0cd7f436, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12419,6 +12407,14 @@ PrefabInstance:
     - target: {fileID: 2556354273972661234, guid: bfe3223ba253f37489b213a405fd8830, type: 3}
       propertyPath: m_Name
       value: FallingPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556354273972661235, guid: bfe3223ba253f37489b213a405fd8830, type: 3}
+      propertyPath: m_Target.x
+      value: 1.7800001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556354273972661235, guid: bfe3223ba253f37489b213a405fd8830, type: 3}
+      propertyPath: m_Target.y
+      value: 0.029999971
       objectReference: {fileID: 0}
     - target: {fileID: 2556354273972661236, guid: bfe3223ba253f37489b213a405fd8830, type: 3}
       propertyPath: m_RootOrder
