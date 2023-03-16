@@ -14,6 +14,8 @@ public class scpPlayer : MonoBehaviour
     private Rigidbody2D rig;
     private Animator anim;
 
+    bool isBlowing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +58,7 @@ public class scpPlayer : MonoBehaviour
 
     void Jump()
     {
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && !isBlowing)
         {
             if(!isJumping)
             {
@@ -82,6 +84,7 @@ public class scpPlayer : MonoBehaviour
         {
             isJumping = false;
             anim.SetBool("jump", false);
+            isBlowing = false;
         } 
 
         if(collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Saw")
@@ -97,5 +100,13 @@ public class scpPlayer : MonoBehaviour
         {
             isJumping = true;
         }   
+    }
+
+    void OnTriggerStray2D(Collider2D collider)
+    {
+        if(collider.gameObject.layer == 11)
+        {
+            isBlowing = true;
+        }
     }
 }

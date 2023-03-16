@@ -21,6 +21,8 @@ public class scpFlogEnemy : MonoBehaviour
     public BoxCollider2D boxCollider2D;
     public CircleCollider2D circleCollider2D;
 
+    bool playerDestroyed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,7 @@ public class scpFlogEnemy : MonoBehaviour
         {
             float height = col.contacts[0].point.y - headPoint.position.y;
 
-            if(height > 0)
+            if(height > 0 && !playerDestroyed)
             {
                 col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 5, ForceMode2D.Impulse);
                 speed = 0;
@@ -57,7 +59,14 @@ public class scpFlogEnemy : MonoBehaviour
                 boxCollider2D.enabled = false;
                 circleCollider2D.enabled = false;
                 rig.bodyType = RigidbodyType2D.Kinematic;
+                
                 Destroy(gameObject, 0.43f);
+            }
+            else
+            {
+                playerDestroyed = true;
+                scpGameController.instance.ShowGameOver();
+                Destroy(col.gameObject);
             }
         }
     }
